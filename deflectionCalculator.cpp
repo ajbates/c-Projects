@@ -9,7 +9,8 @@ const float EL_steel = 3.9e9;
 float length, weight, base, height;
 const char seperator = ' ';
 const int numWidth = 12;
-const int answers[3] = {EL_Al, EL_wood, EL_steel};
+float answers[] = {1.49e9, .187e9, 3.9e9};
+String materials[] = {Aluminum, Wood, Steel};
 int i = 0;
 
 int main()
@@ -24,8 +25,8 @@ int main()
   cout << "Height: ";
   cin >> height;
 
-  for (i = 0; i < answers.length; i++) {
-    float answers[i] = ((4 * ((length*length*length) * weight)) / (answers[i] * base * (height*height*height)));
+  for (i = 0; i < 3; i++) {
+    answers[i] = ((4 * ((length * length * length) * weight)) / ((answers[i] * base) * (height * height * height)));
     cout.precision(2);
     cout << "The answer is: " << answers[i] << endl;
     cout << left << setw(numWidth) << "material";
@@ -35,7 +36,7 @@ int main()
     cout << left << setw(numWidth) << "base(ft)";
     cout << left << setw(numWidth) << "height(ft)";
     cout << left << setw(numWidth) << "max deflection" << endl;
-    cout << setw(numWidth) <<
+    cout << setw(numWidth) << materials[i];
     cout << setw(numWidth) << EL_steel;
     cout << setw(numWidth) << length;
     cout << setw(numWidth) << weight;
