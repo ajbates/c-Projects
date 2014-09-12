@@ -9,6 +9,8 @@ const float EL_steel = 3.9e9;
 float length, weight, base, height;
 const char seperator = ' ';
 const int numWidth = 12;
+const int answers[2] = {EL_Al, EL_wood, EL_steel};
+int i = 0;
 
 int main()
 {
@@ -22,19 +24,23 @@ int main()
   cout << "Height: ";
   cin >> height;
 
-  float answer = ((4 * ((length*length*length) * weight)) / (base * (height*height*height)));
-  cout.precision(2);
-  cout << "The answer is: " << answer << endl;
-  cout << left << setw(numWidth) << "Elasticity";
-  cout << left << setw(numWidth) << "Length";
-  cout << left << setw(numWidth) << "Weight";
-  cout << left << setw(numWidth) << "Base";
-  cout << left << setw(numWidth) << "Height";
-  cout << left << setw(numWidth) << "Answer" << endl;
-  cout << setw(12) << EL_steel;
-  cout << setw(12) << length;
-  cout << setw(12) << weight;
-  cout << setw(12) << base;
-  cout << setw(12) << height;
-  cout << setw(12) << answer << endl;
+  for (i = 0; i < answers.length; i++) {
+    float answers[i] = ((4 * ((length*length*length) * weight)) / (answers[i] * base * (height*height*height)));
+    cout.precision(2);
+    cout << "The answer is: " << answers[i] << endl;
+    cout << left << setw(numWidth) << "material";
+    cout << left << setw(numWidth) << "elasticity";
+    cout << left << setw(numWidth) << "length(ft)";
+    cout << left << setw(numWidth) << "weight(lb)";
+    cout << left << setw(numWidth) << "base(ft)";
+    cout << left << setw(numWidth) << "height(ft)";
+    cout << left << setw(numWidth) << "max deflection" << endl;
+    cout << setw(numWidth) <<
+    cout << setw(numWidth) << EL_steel;
+    cout << setw(numWidth) << length;
+    cout << setw(numWidth) << weight;
+    cout << setw(numWidth) << base;
+    cout << setw(numWidth) << height;
+    cout << setw(numWidth) << answers[i] << endl;
+  }
 }
