@@ -31,12 +31,10 @@ int main()
   cout << left << setw(numWidth) << "Base";
   cout << left << setw(numWidth) << "Height";
   cout << left << setw(numWidth) << "Answer" << endl;
-  cout << setw(12) << EL_steel
-  cout << setw(12) << length
-  cout << setw(12) << weight
-  cout << setw(12) << base
-  cout << setw(12) << height
-  cout << setw(12) << answer
-  << endl;
-  return 0;
+  cout << setw(12) << EL_steel;
+  cout << setw(12) << length;
+  cout << setw(12) << weight;
+  cout << setw(12) << base;
+  cout << setw(12) << height;
+  cout << setw(12) << answer << endl;
 }
