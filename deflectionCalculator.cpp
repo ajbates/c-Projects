@@ -28,7 +28,7 @@ int main()
     float answers[i] = ((4 * ((length*length*length) * weight)) / (answers[i] * base * (height*height*height)));
     cout.precision(2);
     cout << "The answer is: " << answers[i] << endl;
-    cout << left << setw(numWidth) << "material";
+    cout << left << setw(numWidth) << "materials";
     cout << left << setw(numWidth) << "elasticity";
     cout << left << setw(numWidth) << "length(ft)";
     cout << left << setw(numWidth) << "weight(lb)";
