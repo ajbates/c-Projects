@@ -9,7 +9,7 @@ const float EL_steel = 3.9e9;
 float length, weight, base, height;
 const char seperator = ' ';
 const int numWidth = 12;
-const int answers[2] = {EL_Al, EL_wood, EL_steel};
+const int answers[3] = {EL_Al, EL_wood, EL_steel};
 int i = 0;
 
 int main()
