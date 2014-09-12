@@ -1,31 +1,36 @@
 #include <iostream>
+// #include <iomanip.h>
 
 using namespace std;
 
+float EL_Al = 1.49e9;
+float EL_wood = .187e9;
+float EL_steel = 3.9e9;
+float length, weight, base, height;
+const char seperator = ' ';
+const int numWidth = 12;
+
 int main()
-const double EL_AL = 1.49e9;
-const double EL_wood = .187e9;
-const double EL_steel = 3.9e9;
 {
+
     cout << "Enter the Length: ";
     cin >> length;
-    cout << "Weight";
-    cin >> weight
+    cout << "Weight: ";
+    cin >> weight;
     cout << "Base: ";
     cin >> base;
     cout << "Height: ";
     cin >> height;
 
-    double answer = (length * weight) / (base * height);
-    cout << "The answer is " << answer << endl;
-    cout << fixed << setprecision(2)
-        << setw(12) << "Elasticity"
-        << setw(12) << "Length"
-        << setw(12) << "Weight"
-        << setw(12) << "Base"
-        << setw(12) << "Height"
-        << setw(12) << "Answer"
-        << endl;
+    float answer = ((4 * ((length*length*length) * weight)) / (base * (height*height*height)));
+    cout << setprecision(2) << answer;
+    cout << "The answer is: " << answer << endl;
+    cout << left << setw(numWidth) << "Elasticity";
+    cout << left << setw(numWidth) << "Length";
+    cout << left << setw(numWidth) << "Weight";
+    cout << left << setw(numWidth) << "Base";
+    cout << left << setw(numWidth) << "Height";
+    cout << left << setw(numWidth) << "Answer" << endl;
     cout << setw(12) << EL_steel
         << setw(12) << length
         << setw(12) << weight
@@ -34,4 +39,9 @@ const double EL_steel = 3.9e9;
         << setw(12) << answer
         << endl;
     return 0;
+}
+
+template<float Measurement> void printElement(Measurement t, const int& width)
+{
+    cout << left << setw(width) << setfill(separator) << t;
 }
